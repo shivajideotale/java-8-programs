@@ -10,7 +10,7 @@ public class SumOfNumbers {
 
 	public static void main(String[] args) {
 
-		List<Integer> numbers = Arrays.asList(5, 3, 4, 1, 3, 7, 2, 9, 9, 4);
+		List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
 
 		// Stream.reduce
 		Optional<Integer> sumByReduce1 = numbers.stream().reduce((a, b) -> a + b);
