@@ -15,19 +15,27 @@ public class SumOfNumbers {
 		// Stream.reduce
 		Optional<Integer> sum1 = numbers.stream().reduce((a, b) -> a + b);
 		System.out.println(sum1.get());
+		
+		Optional<Integer> sum2 = numbers.stream().reduce(Integer::sum);
+		System.out.println(sum2.get());
+		
 
 		// IntStream.sum
-		IntStream intStream = numbers.stream().mapToInt(n -> n);
-		int sum2 = intStream.sum();
-		System.out.println(sum2);
+		IntStream intStream1 = numbers.stream().mapToInt(n -> n);
+		int sum3 = intStream1.sum();
+		System.out.println(sum3);
+		
+		IntStream intStream2 = numbers.stream().mapToInt(Integer::intValue);
+		int sum4 = intStream2.sum();
+		System.out.println(sum4);
 
 		// Collectors.summingInt
-		int sum3 = numbers.stream().collect(Collectors.summingInt(n -> n));
-		System.out.println(sum3);
+		int sum5 = numbers.stream().collect(Collectors.summingInt(n -> n));
+		System.out.println(sum5);
 
 		// Collectors.summarizingInt
-		long sum4 = numbers.stream().collect(Collectors.summarizingInt(n -> n)).getSum();
-		System.out.println(sum4);
+		long sum6 = numbers.stream().collect(Collectors.summarizingInt(n -> n)).getSum();
+		System.out.println(sum6);
 
 	}
 
