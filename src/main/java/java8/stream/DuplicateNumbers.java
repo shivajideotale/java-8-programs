@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -11,6 +12,12 @@ import java.util.stream.Collectors;
 public class DuplicateNumbers {
 
 	public static void main(String[] args) {
+
+		Optional<Integer> data = Optional.of(null);
+
+		System.out.println(data.orElseThrow(() -> {
+			return new IllegalArgumentException("required");
+		}));
 
 		List<Integer> numbers = Arrays.asList(new Integer[] { 1, 2, 1, 3, 4, 4, 2 });
 
